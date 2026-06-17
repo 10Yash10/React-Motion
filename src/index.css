@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* font-family: "mono"; */
+}
+
+body {
+  background-color: #111111ef;
+  color: #fff;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
