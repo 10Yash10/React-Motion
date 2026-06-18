@@ -5,10 +5,11 @@ import React from "react";
 // import L4 from "./Lessions/L4_LearnInital";
 // import L5 from "./Lessions/L5_Transition";
 // import L6 from "./Lessions/L6_WhileHover";
-import L7 from "./Lessions/L7_WhileTap";
+// import L7 from "./Lessions/L7_WhileTap";
+import L8 from "./Lessions/L8_WhileInView";
 
 const App = () => {
-  return <L7 />;
+  return <L8 />;
 };
 
 export default App;
