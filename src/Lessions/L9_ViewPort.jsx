@@ -64,6 +64,24 @@ const L9 = () => {
         >
           Card 3
         </motion.div>
+
+        <motion.div
+          className="box bg-blue-500"
+          initial={{
+            x: -100,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.4,
+          }}
+        >
+          Timeline event
+        </motion.div>
       </div>
     </>
   );

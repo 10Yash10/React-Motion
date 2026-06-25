@@ -7,10 +7,11 @@ import React from "react";
 // import L6 from "./Lessions/L6_WhileHover";
 // import L7 from "./Lessions/L7_WhileTap";
 // import L8 from "./Lessions/L8_WhileInView";
-import L9 from "./Lessions/L9_ViewPort";
+// import L9 from "./Lessions/L9_ViewPort";
+import L_10 from "./Lessions/L10_Variants";
 
 const App = () => {
-  return <L9 />;
+  return <L_10 />;
 };
 
 export default App;
