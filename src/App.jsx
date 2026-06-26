@@ -9,10 +9,11 @@ import React from "react";
 // import L8 from "./Lessions/L8_WhileInView";
 // import L9 from "./Lessions/L9_ViewPort";
 // import L_10 from "./Lessions/L10_Variants";
-import L11 from "./Lessions/L11_Parent_Child";
+// import L11 from "./Lessions/L11_Parent_Child";
+import L12 from "./Lessions/L12_Staggering";
 
 const App = () => {
-  return <L11 />;
+  return <L12 />;
 };
 
 export default App;
