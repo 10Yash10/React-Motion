@@ -19,7 +19,7 @@ const L13 = () => {
     window.addEventListener("mousemove", moveCursor);
 
     return () => {
-      window.removeEventListener("mouseMove", moveCursor);
+      window.removeEventListener("mousemove", moveCursor);
     };
   }, [valX, valY]);
 
