@@ -1,4 +1,5 @@
 import React from "react";
+import L17 from "./Lessions/L17_Offset&Target";
 // import L1 from "./Lessions/L1";
 // import L2 from "./Lessions/L2";
 // import L3_Understanding_Animate_Prop from "./Lessions/L3_Understanding_Animate_Prop";
@@ -14,10 +15,10 @@ import React from "react";
 // import L13 from "./Lessions/L13_UseMotionValues";
 // import L14 from "./Lessions/L14_useSpring";
 // import L15 from "./Lessions/L15_useTransform";
-import L16 from "./Lessions/L16_useScroll";
+// import L16 from "./Lessions/L16_useScroll";
 
 const App = () => {
-  return <L16 />;
+  return <L17 />;
 };
 
 export default App;
