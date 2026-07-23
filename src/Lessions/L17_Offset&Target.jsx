@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import Cartoon from "../assets/cartoon.png";
 
+// when the target is reached, using offset we can describe when to start the animation, then on scroll of that target box we can animate our element however we wanted to.
+
 const L17 = () => {
   return (
     <>
