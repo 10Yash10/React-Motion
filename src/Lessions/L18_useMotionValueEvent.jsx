@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
   motion,
@@ -9,8 +9,10 @@ import {
 
 const L18 = () => {
   const x = useMotionValue(0);
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [percentage, setPercentage] = useState(0);
 
   //   useEffect(() => {
   //     const unsubscribe = x.on("change", (latest) => {
@@ -42,11 +44,33 @@ const L18 = () => {
     }
   });
 
+  // senario 2: show go to top button
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    // const previous = useScroll.getPrevious();
+
+    if (latest > 200) {
+      setShowBackToTop(true);
+    } else {
+      setShowBackToTop(false);
+    }
+  });
+
+  // Real Use Case #3 — Navbar Background
+
+  // Real Use Case #4 — Progress Percentage
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setPercentage(Math.round(latest * 100));
+  });
+
   return (
     <>
       <Header text="Lesson 18: useMotionValueEvent hook" />
 
-      <div style={{ height: "200vh" }} className="flex flex-col gap-6 p-6">
+      <div
+        id="top"
+        style={{ height: "200vh" }}
+        className="flex flex-col gap-6 p-6"
+      >
         <motion.div style={{ x }} className="box bg-blue-500">
           Box 1
         </motion.div>
@@ -66,7 +90,19 @@ const L18 = () => {
         >
           navbar
         </motion.nav>
+
+        <motion.a
+          href="#"
+          animate={{
+            opacity: showBackToTop ? 1 : 0,
+          }}
+          className="border-2 border-white fixed p-3 right-5 bottom-5 cursor-pointer"
+        >
+          Back to Top
+        </motion.a>
       </div>
+
+      <motion.p className="fixed top-5 right-5">{percentage}%</motion.p>
     </>
   );
 };
