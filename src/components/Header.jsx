@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ text, sticky }) => {
+const Header = ({ text, sticky = false }) => {
   return (
     <div
       className={`w-[80%] justify-self-center h-12 border-b-2 border-white/55 ${sticky ? "sticky top-0" : ""}`}

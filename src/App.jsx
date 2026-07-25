@@ -16,10 +16,11 @@ import React from "react";
 // import L15 from "./Lessions/L15_useTransform";
 // import L16 from "./Lessions/L16_useScroll";
 // import L17 from "./Lessions/L17_Offset&Target";
-import L18 from "./Lessions/L18_useMotionValueEvent";
+// import L18 from "./Lessions/L18_useMotionValueEvent";
+import L19 from "./Lessions/L19_Parallax";
 
 const App = () => {
-  return <L18 />;
+  return <L19 />;
 };
 
 export default App;
