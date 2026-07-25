@@ -17,10 +17,11 @@ import React from "react";
 // import L16 from "./Lessions/L16_useScroll";
 // import L17 from "./Lessions/L17_Offset&Target";
 // import L18 from "./Lessions/L18_useMotionValueEvent";
-import L19 from "./Lessions/L19_Parallax";
+// import L19 from "./Lessions/L19_Parallax";
+import L20 from "./Lessions/L20_StickyStoryTelling";
 
 const App = () => {
-  return <L19 />;
+  return <L20 />;
 };
 
 export default App;
