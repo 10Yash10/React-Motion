@@ -19,10 +19,11 @@ import React from "react";
 // import L18 from "./Lessions/L18_useMotionValueEvent";
 // import L19 from "./Lessions/L19_Parallax";
 // import L20 from "./Lessions/L20_StickyStoryTelling";
-import StickyScrollProjects from "./Lessions/StickyScrollProject";
+// import StickyScrollProjects from "./Lessions/StickyScrollProject";
+import L21 from "./Lessions/L21_TimeLineNumber";
 
 const App = () => {
-  return <StickyScrollProjects />;
+  return <L21 />;
 };
 
 export default App;
