@@ -20,10 +20,11 @@ import React from "react";
 // import L19 from "./Lessions/L19_Parallax";
 // import L20 from "./Lessions/L20_StickyStoryTelling";
 // import StickyScrollProjects from "./Lessions/StickyScrollProject";
-import L21 from "./Lessions/L21_TimeLineNumber";
+// import L21 from "./Lessions/L21_TimeLineNumber";
+import L22 from "./Lessions/L22_TimeLineFunction";
 
 const App = () => {
-  return <L21 />;
+  return <L22 />;
 };
 
 export default App;
