@@ -1,5 +1,11 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValueEvent,
+} from "motion/react";
 
 export const timelineData = [
   {
@@ -34,21 +40,21 @@ export const timelineData = [
       "Built cross-platform mobile applications with animations and API integrations.",
     technologies: ["React Native", "Redux", "Firebase"],
   },
-  {
-    id: 5,
-    year: "2025",
-    title: "Team Lead",
-    description:
-      "Led development, mentored junior developers and managed client projects.",
-    technologies: ["Leadership", "Architecture", "Code Review"],
-  },
-  {
-    id: 6,
-    year: "Future",
-    title: "Senior Full Stack Engineer",
-    description: "Building scalable products and world-class user experiences.",
-    technologies: ["System Design", "Cloud", "AI"],
-  },
+  //   {
+  //     id: 5,
+  //     year: "2025",
+  //     title: "Team Lead",
+  //     description:
+  //       "Led development, mentored junior developers and managed client projects.",
+  //     technologies: ["Leadership", "Architecture", "Code Review"],
+  //   },
+  //   {
+  //     id: 6,
+  //     year: "Future",
+  //     title: "Senior Full Stack Engineer",
+  //     description: "Building scalable products and world-class user experiences.",
+  //     technologies: ["System Design", "Cloud", "AI"],
+  //   },
 ];
 
 const L22 = () => {
@@ -123,6 +129,8 @@ const useTimelineProgress = () => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
+
+    offset: ["start start", "end end"],
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
@@ -142,10 +150,15 @@ const useTimelineProgress = () => {
 
 // ================================= useTimelineItemProgress
 const useTimelineItemProgress = (index, total, progress) => {
-  console.log(index, total, progress);
   const start = index / total;
   const end = (index + 1) / total; // end here is basically the next range
   const threshold = start + (end - start) * 0.4;
+
+  console.log(start, end, threshold);
+
+  useMotionValueEvent(progress, "change", (latest) => {
+    console.log(latest);
+  });
 
   // example:
   // index = 2 and total = 4 so start = 0.5 and end = 0.75.
@@ -225,7 +238,6 @@ const TimelineProgress = ({ lineHeight }) => {
 
 // ================================= TimeLineItem
 const TimelineItem = ({ key, item, index, totalItems, scrollYProgress }) => {
-  console.log(index, totalItems, scrollYProgress);
   const { circleScale, circleColor, cardOpacity, cardY } =
     useTimelineItemProgress(index, totalItems, scrollYProgress);
 
@@ -357,6 +369,7 @@ const Timeline = () => {
       mx-auto
       py-32
       px-8
+      bg-red-500
       "
     >
       <TimelineProgress lineHeight={lineHeight} />
