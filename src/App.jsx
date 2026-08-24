@@ -23,10 +23,11 @@ import React from "react";
 // import L21 from "./Lessions/L21_TimeLineNumber";
 // import L22 from "./Lessions/L22_TimeLineFunction";
 // import L23 from "./Lessions/L23_MouseMovement";
-import L24 from "./Lessions/L24_Gestures_HoverTapDragSwipe";
+// import L24 from "./Lessions/L24_Gestures_HoverTapDragSwipe";
+import L25_WhileInView from "./Lessions/L25_WhileInView";
 
 const App = () => {
-  return <L24 />;
+  return <L25_WhileInView />;
 };
 
 export default App;
