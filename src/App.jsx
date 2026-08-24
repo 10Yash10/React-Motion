@@ -22,10 +22,11 @@ import React from "react";
 // import StickyScrollProjects from "./Lessions/StickyScrollProject";
 // import L21 from "./Lessions/L21_TimeLineNumber";
 // import L22 from "./Lessions/L22_TimeLineFunction";
-import L23 from "./Lessions/L23_MouseMovement";
+// import L23 from "./Lessions/L23_MouseMovement";
+import L24 from "./Lessions/L24_Gestures_HoverTapDragSwipe";
 
 const App = () => {
-  return <L23 />;
+  return <L24 />;
 };
 
 export default App;

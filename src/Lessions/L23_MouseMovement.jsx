@@ -45,6 +45,18 @@ const L23 = () => {
   const rotateYsmooth = useSpring(rotateY);
   const rotateXsmooth = useSpring(rotateX);
 
+  // move on x , yusing normalized values
+
+  const x = useTransform(normalizedX, [-1, 1], [-30, 30]);
+  const y = useTransform(normalizedY, [-1, 1], [-30, 30]);
+
+  const smoothX = useSpring(x);
+  const smoothY = useSpring(y);
+
+  // scale on x, y mouse movement
+  const scale = useTransform(normalizedX, [-1, 0, 1], [0.7, 1, 1.3]);
+  const scaleSmooth = useSpring(scale);
+
   return (
     <>
       <Header text="Lesson 23: Mouse Interaction" />
@@ -58,7 +70,7 @@ const L23 = () => {
         className="pointer-events-none fixed top-0 left-0 w-4 h-4 rounded-full bg-blue-500 z-50"
       />
 
-      <div className="flex gap-6 p-6">
+      <div className="flex flex-col gap-6 p-6 overflow-hidden">
         <motion.div
           style={{
             rotateY: rotateYsmooth,
@@ -68,6 +80,17 @@ const L23 = () => {
           className="card bg-blue-500/20 shadow-xl shadow-blue-500"
         >
           Card 1
+        </motion.div>
+
+        <motion.p style={{ x: smoothX, y: smoothY, textAlign: "center" }}>
+          Hello
+        </motion.p>
+
+        <motion.div
+          style={{ scale: scaleSmooth }}
+          className="box bg-violet-500"
+        >
+          Box 1
         </motion.div>
       </div>
     </>
